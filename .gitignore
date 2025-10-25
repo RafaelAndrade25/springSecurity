@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Chaves de segurança e autenticação
+app.key
+app.pub
