@@ -64,7 +64,7 @@ public class TweetController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 
         var isAdmin = user.get().getRoles()
-                .stream().anyMatch(role -> role.getName().equals(Role.Values.ADMIN.name()));
+                .stream().anyMatch(role -> role.getName().equalsIgnoreCase(Role.Values.ADMIN.name()));
 
         if(isAdmin || tweet.getUser().getUserId().equals(UUID.fromString(token.getName()))) {
             tweetRepository.deleteById(tweetId);
