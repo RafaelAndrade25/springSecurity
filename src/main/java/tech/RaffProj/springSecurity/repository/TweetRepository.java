@@ -6,4 +6,5 @@ import tech.RaffProj.springSecurity.entities.Tweet;
 
 @Repository
 public interface TweetRepository extends JpaRepository<Tweet, Long> {
+
 }

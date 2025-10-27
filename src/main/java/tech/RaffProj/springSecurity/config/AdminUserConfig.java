@@ -15,15 +15,14 @@ import java.util.Set;
 
 @Configuration
 public class AdminUserConfig implements CommandLineRunner {
-    private final PasswordEncoder passwordEncoder;
+
     private RoleRepository roleRepository;
     private UserRepository userRepository;
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private BCryptPasswordEncoder passwordEncoder;
 
-    public AdminUserConfig(RoleRepository roleRepository, UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder, PasswordEncoder passwordEncoder) {
+    public AdminUserConfig(RoleRepository roleRepository, UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
         this.roleRepository = roleRepository;
         this.userRepository = userRepository;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.passwordEncoder = passwordEncoder;
     }
 
